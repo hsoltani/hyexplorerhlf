@@ -18,31 +18,7 @@
          }
       }
    },
-   "channels":{
-      "common":{
-         "peers":{
-            "peer0.atlantis.com":{
-
-            },
-            "peer0.aptalkarga.tr":{
-
-            },
-            "peer0.nevergreen.nl":{
-
-            }
-            
-         },
-         "connection":{
-            "timeout":{
-               "peer":{
-                  "endorser":"6000",
-                  "eventHub":"6000",
-                  "eventReg":"6000"
-               }
-            }
-         }
-      }
-   },
+   
    "organizations":{
       "KargaMSP":{
          "mspid":"KargaMSP",
