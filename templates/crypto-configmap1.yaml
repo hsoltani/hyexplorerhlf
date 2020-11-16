@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "explorer.fullname" . }}-crypto1
+  labels:
+    app: {{ template "explorer.name" . }}
+    chart: {{ template "explorer.chart" . }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+type: Opaque
+data:
+  {{- (.Files.Glob "crypto-config/peerOrganizations/aptalkarga.tr/users/Admin@aptalkarga.tr/msp/keystore/c19f6f5ccd4a2d960840e31a6ca9767213e517aa92d100a5fafb1d3751789f67_sk").AsConfig | nindent 2 }}

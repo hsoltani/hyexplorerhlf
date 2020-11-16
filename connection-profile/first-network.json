@@ -1,0 +1,108 @@
+{
+   "name":"first-network",
+   "version":"1.0.0",
+   "client":{
+      "tlsEnable":true,
+      "adminCredential":{
+         "id":"exploreradmin",
+         "password":"exploreradminpw"
+      },
+      "enableAuthentication":false,
+      "organization":"KargaMSP",
+      "connection":{
+         "timeout":{
+            "peer":{
+               "endorser":"300"
+            },
+            "orderer":"300"
+         }
+      }
+   },
+   "channels":{
+      "common":{
+         "peers":{
+            "peer0.atlantis.com":{
+
+            },
+            "peer0.aptalkarga.tr":{
+
+            },
+            "peer0.nevergreen.nl":{
+
+            }
+            
+         },
+         "connection":{
+            "timeout":{
+               "peer":{
+                  "endorser":"6000",
+                  "eventHub":"6000",
+                  "eventReg":"6000"
+               }
+            }
+         }
+      }
+   },
+   "organizations":{
+      "KargaMSP":{
+         "mspid":"KargaMSP",
+         "adminPrivateKey":{
+            "path":"/tmp/crypto/peerOrganizations/aptalkarga.tr/users/Admin@aptalkarga.tr/msp/keystore/c19f6f5ccd4a2d960840e31a6ca9767213e517aa92d100a5fafb1d3751789f67_sk"
+         },
+         "peers":[
+            "peer0.aptalkarga.tr"
+            
+         ],
+         "signedCert":{
+            "path":"/tmp/crypto/peerOrganizations/aptalkarga.tr/users/Admin@aptalkarga.tr/msp/signcerts/Adminaptalkargatr-cert.pem"
+         }
+      },
+      "AtlantisMSP":{
+         "mspid":"AtlantisMSP",
+         "adminPrivateKey":{
+            "path":"/tmp/crypto/peerOrganizations/atlantis.com/users/Admin@atlantis.com/msp/keystore/01e6d26a8ae2fec182e1e43ddf06ff4d36760eab2696b618b7acb6aa5bdb4e3e_sk"
+         },
+         "peers":[
+            "peer0.atlantis.com"
+            
+         ],
+         "signedCert":{
+            "path":"/tmp/crypto/peerOrganizations/atlantis.com/users/Admin@atlantis.com/msp/signcerts/Adminatlantiscom-cert.pem"
+         }
+      },
+      "NevergreenMSP":{
+         "mspid":"NevergreenMSP",
+         "adminPrivateKey":{
+            "path":"/tmp/crypto/peerOrganizations/nevergreen.nl/users/Admin@nevergreen.nl/msp/keystore/738dac5bad7a8b3f6059cdb835a504228d830f080e9dbb968c38fb17a55224a7_sk"
+         },
+         "peers":[
+            "peer0.nevergreen.nl"
+            
+         ],
+         "signedCert":{
+            "path":"/tmp/crypto/peerOrganizations/atlantis.com/users/Admin@atlantis.com/msp/signcerts/Adminnevergreennl-cert.pem"
+         }
+      }
+   },
+   "peers":{
+      "peer0.aptalkarga.tr":{
+         "tlsCACerts":{
+            "path":"/tmp/crypto/peerOrganizations/aptalkarga.tr/peers/peer0.aptalkarga.tr/tls/ca.crt"
+         },
+         "url":"grpc://peer0.aptalkarga.tr:7051"
+      },
+      "peer0.atlantis.com":{
+         "tlsCACerts":{
+            "path":"/tmp/crypto/peerOrganizations/atlantis.com/peers/peer0.atlantis.com/tls/ca.crt"
+         },
+         "url":"grpc://peer0.atlantis.com:7051"
+      },
+      "peer0.nevergreen.nl":{
+         "tlsCACerts":{
+            "path":"/tmp/crypto/peerOrganizations/nevergreen.nl/peers/peer0.nevergreen.nl/tls/ca.crt"
+         },
+         "url":"grpc://peer0.nevergreen.nl:7051"
+      }
+      
+   }
+}
