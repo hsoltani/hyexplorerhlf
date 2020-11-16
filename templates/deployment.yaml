@@ -28,7 +28,7 @@ spec:
         - name: WAIT_FOR_IT
           value: "true"
         - name: WAIT_FOR_PODS
-          value: "odoo-postgresql.odoo"
+          value: "odoo-postgresql.hlf-kube"
       containers:
       - name: {{ template "explorer.fullname" . }}
         image: {{ template "explorer.image" . }}
