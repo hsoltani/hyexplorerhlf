@@ -21,14 +21,9 @@ spec:
     spec:
 {{- include "explorer.imagePullSecrets" . | indent 6 }}
       initContainers:
-      - name: "wait-for-services"
-        image: stevenaldinger/docker-k8s-wait-for-it
-        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
-        env:
-        - name: WAIT_FOR_IT
-          value: "true"
-        - name: WAIT_FOR_PODS
-          value: "odoo1-postgresql.hlf"
+      - name: init-mydb
+        image: busybox:1.28
+        command: ['sh', '-c', "until nslookup odoo1-postgresql.$(cat /var/run/secrets/kubernetes.io/serviceaccount/hlf).svc.cluster.local; do echo waiting for mydb; sleep 2; done"]
       containers:
       - name: {{ template "explorer.fullname" . }}
         image: {{ template "explorer.image" . }}
