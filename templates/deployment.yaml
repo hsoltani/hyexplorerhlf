@@ -23,7 +23,7 @@ spec:
       initContainers:
       - name: init-mydb
         image: busybox:1.28
-        command: ['sh', '-c', "until nslookup odoo1-postgresql-0.odoo1-postgresql-headless.hlf.svc.khb.paas; do echo waiting for mydb; sleep 2; done"]
+        command: ['sh', '-c', "until nslookup odoo-postgresql-0.odoo-postgresql-headless.hlf-kube.svc.khb.paas; do echo waiting for mydb; sleep 2; done"]
       containers:
       - name: {{ template "explorer.fullname" . }}
         image: {{ template "explorer.image" . }}
