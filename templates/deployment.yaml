@@ -28,7 +28,7 @@ spec:
         - name: WAIT_FOR_IT
           value: "true"
         - name: WAIT_FOR_PODS
-          value: "odoo-postgresql.soltani"
+          value: "odoo1-postgresql.hlf"
       containers:
       - name: {{ template "explorer.fullname" . }}
         image: {{ template "explorer.image" . }}
